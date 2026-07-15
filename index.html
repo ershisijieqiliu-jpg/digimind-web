@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>DigiMind｜数码产品比较顾问</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="DigiMind 首页"><span>DM</span>DigiMind</a>
+      <nav><a href="#workflow">方法论</a><a href="#advisor">开始比较</a></nav>
+      <button id="reset-profile" class="text-button" type="button">重置档案</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">DIGITAL DECISION, MADE HUMAN</p>
+        <h1>别被参数表带着跑。<br /><em>买适合你的。</em></h1>
+        <p class="hero-copy">DigiMind 是你的数码购买顾问。先理解你的使用方式，再给出不绕弯的选择与避坑建议。</p>
+        <a class="primary-button" href="#advisor">开始建立需求档案 <span>↓</span></a>
+        <dl class="hero-stats"><div><dt>需求优先</dt><dd>不堆参数</dd></div><div><dt>体验优先</dt><dd>不迷信跑分</dd></div><div><dt>结论明确</dt><dd>不模棱两可</dd></div></dl>
+      </section>
+
+      <section id="workflow" class="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading"><p class="eyebrow">HOW IT WORKS</p><h2 id="workflow-title">四步，做出不后悔的决定。</h2></div>
+        <ol>
+          <li><span>01</span><strong>理解你</strong><p>使用场景、预算和忍不了的痛点，缺一个都不急着推荐。</p></li>
+          <li><span>02</span><strong>筛掉噪音</strong><p>游戏、影像、商务，看的维度本来就不该相同。</p></li>
+          <li><span>03</span><strong>说人话</strong><p>一句锐评、关键差异、通病避坑，不复读发布会。</p></li>
+          <li><span>04</span><strong>给结论</strong><p>直接告诉你怎么买，也告诉你什么情况不值得加钱。</p></li>
+        </ol>
+      </section>
+
+      <section id="advisor" class="advisor" aria-labelledby="advisor-title">
+        <div class="section-heading"><p class="eyebrow">YOUR BUYING BRIEF</p><h2 id="advisor-title">先把你的需求说清楚。</h2><p>这不是问卷，是帮你过滤掉不适合的产品。</p></div>
+        <div class="advisor-grid">
+          <form id="profile-form" class="profile-card">
+            <fieldset>
+              <legend>它主要用来做什么？</legend>
+              <div class="choice-grid" data-choice="usage">
+                <button type="button" data-value="日常与社交">日常与社交</button><button type="button" data-value="游戏与性能">游戏与性能</button><button type="button" data-value="拍照与创作">拍照与创作</button><button type="button" data-value="商务与办公">商务与办公</button>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>你的预算区间？</legend>
+              <div class="choice-grid compact" data-choice="budget">
+                <button type="button" data-value="1500 元以内">1500 元以内</button><button type="button" data-value="1500–3000 元">1500–3000 元</button><button type="button" data-value="3000–5000 元">3000–5000 元</button><button type="button" data-value="5000 元以上">5000 元以上</button>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>最不能忍的痛点？ <small>可多选</small></legend>
+              <div class="pain-points" data-choice="pain">
+                <button type="button" data-value="续航焦虑">续航焦虑</button><button type="button" data-value="机身太重">机身太重</button><button type="button" data-value="发热降频">发热降频</button><button type="button" data-value="杀后台">杀后台</button><button type="button" data-value="拍照鬼影">拍照鬼影</button><button type="button" data-value="信号不稳">信号不稳</button>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>生态或品牌倾向？</legend>
+              <select id="ecosystem"><option value="无强绑定">无强绑定</option><option value="苹果生态">苹果生态</option><option value="安卓生态">安卓生态</option><option value="有品牌偏好，仍愿意比较">有品牌偏好，仍愿意比较</option></select>
+            </fieldset>
+            <button class="primary-button form-button" type="submit">生成我的选购简报 <span>→</span></button>
+          </form>
+
+          <section class="brief-card" aria-live="polite">
+            <p class="brief-label">YOUR CURRENT BRIEF</p>
+            <div id="brief-empty" class="brief-empty"><span>✦</span><p>填完左侧档案，DigiMind 会先告诉你该看什么，再比较型号。</p></div>
+            <div id="brief-content" hidden>
+              <p id="brief-title" class="brief-title"></p>
+              <ul id="brief-list"></ul>
+              <p class="brief-note">下一步：填入两款候选产品，DigiMind 会按这些优先级进行比较。</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="compare-shell" aria-labelledby="compare-title">
+        <div class="section-heading"><p class="eyebrow">ASK DIGIMIND</p><h2 id="compare-title">把候选型号交给我。</h2><p>没有明确需求时，DigiMind 会先问“灵魂三问”，不会假装懂你。</p></div>
+        <div class="chat-layout">
+          <section class="chat-card" aria-label="DigiMind 对话">
+            <div id="chat-log" class="chat-log" role="log" aria-live="polite">
+              <article class="message advisor-message"><span>DM</span><p>我是 DigiMind。给我两款型号，或者先告诉我你主要拿它做什么。我不卖参数，只帮你买对。</p></article>
+            </div>
+            <div class="quick-asks"><button type="button" data-prompt="我还没选型号，先问我需要什么。">灵魂三问</button><button type="button" data-prompt="我主要打游戏，该重点看什么？">游戏重点</button><button type="button" data-prompt="我主要拍照，该重点看什么？">拍照重点</button></div>
+            <form id="chat-form" class="chat-form">
+              <label class="sr-only" for="chat-input">向 DigiMind 提问</label>
+              <input id="chat-input" maxlength="240" placeholder="例如：iPhone 和安卓旗舰，怎么选？" />
+              <button type="submit">发送</button>
+            </form>
+          </section>
+          <aside class="comparison-card">
+            <p class="brief-label">COMPARISON INPUT</p>
+            <label>候选产品 A<input id="model-a" placeholder="例如：产品型号 A" /></label>
+            <label>候选产品 B<input id="model-b" placeholder="例如：产品型号 B" /></label>
+            <button id="compare-button" class="secondary-button" type="button">直接推荐 / 比较并购买</button>
+            <p class="data-note">DigiMind 会基于需求生成购买建议；价格、库存和商家信息以京东、淘宝、拼多多及品牌官网实时页面为准。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="report" class="report" hidden aria-live="polite">
+        <header><p class="eyebrow">DIGIMIND VERDICT</p><h2>购买建议已生成</h2><p id="report-summary"></p></header>
+        <article class="sharp-take"><span>一句话锐评</span><p id="sharp-take"></p></article>
+        <div class="report-table-wrap"><table><thead><tr><th>关键体验维度</th><th id="report-a">产品 A</th><th id="report-b">产品 B</th><th>你该怎么判断</th></tr></thead><tbody id="report-table"></tbody></table></div>
+        <div class="avoid-box"><h3>避坑指南</h3><p id="avoid-copy"></p></div>
+      </section>
+    </main>
+    <footer>© DigiMind · 先理解需求，再比较产品。参数、价格和评测数据均应以可追溯实时来源为准。</footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

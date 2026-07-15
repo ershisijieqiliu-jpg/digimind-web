@@ -1,0 +1,13 @@
+{
+  "name": "digimind-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DigiMind 数码产品选购顾问",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
