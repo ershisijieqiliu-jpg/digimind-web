@@ -8,6 +8,8 @@
 
 项目可直接用 Docker 部署到 Render，部署完成后会获得任何人均可访问的 HTTPS 网址。
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fershisijieqiliu-jpg%2Fdigimind-web)
+
 1. 将本目录推送到一个 GitHub 仓库。
 2. 在 Render 创建 **Blueprint**，选择该仓库；平台会读取 `render.yaml`。
 3. 在 Render 的环境变量中填写 `DEEPSEEK_API_KEY`，不要把密钥提交到 GitHub。
